@@ -1,0 +1,226 @@
+/*Fontes Importadas*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Quicksand:wght@300..700&display=swap');
+/*font-family: "Quicksand", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+/*font-family: "Nanum Myeongjo", serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Quicksand:wght@300..700&display=swap');
+/*font-family: "Cinzel", serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&display=swap');
+/*font-family: "Afacad Flux", sans-serif;*/
+
+
+:root{
+    --bg-color1:#fff;
+    --bg-color2:#000;
+    --bg-color3:#555555;
+    --bg-color4:#d6d6d6;
+    --bg-color5:#272727;
+    --bg-color6:#cdcdcd;
+    --font-color1:#fff;
+    --font-color2:#000;
+    --font-color3:#aaaaaa;
+    --font-color4:#747474;
+    --font-color5:#414141;
+
+}
+/*RESET BASICO */
+*{
+    font-family: "Afacad Flux", sans-serif;
+    text-decoration: none;
+    list-style:none;
+    margin: 0; /*ZERANDO TODAS AS MARGENS */
+    padding: 0; /*ZERANDO TODOS OS ESPAÇOS ENTRE AS MARGENS */
+    box-sizing: border-box; /*ZERANDO TODAS AS BORDAS */
+}
+.loading{
+    position:fixed;
+    z-index:1005;
+    background-color: white;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+.loading img{
+    opacity: 0;
+    width:20%;
+    top:50%;
+    left:50%;
+    transform: translateX(50%), translateY(50%);
+    transition: 1s;
+}
+.animation-line{
+    opacity: 0;
+    width:150px;
+    height:2px;
+    background: #cfcfcf;
+    overflow:hidden;
+    position:relative;
+    margin-left:-16%;
+    margin-top:12%;
+}
+.animation-line::before{
+    content: "";
+    width:75px;
+    height:2px;
+    background: black;
+    position:absolute;
+    left:-34px;
+    animation: loading 1.5s infinite ease;
+}
+@keyframes loading{
+    50%{
+        left:96px;
+    }
+}
+body.no-scroll{
+    overflow: hidden;
+}
+footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+    position:absolute;
+    z-index:1003;
+    background: var(--bg-color2);
+}
+footer h1{
+    font-family: "Cinzel", serif;
+    color:var(--font-color1);
+    margin-top:-5%;
+    position:relative;
+    cursor: pointer;
+    transition:1s;
+    font-weight: 300;
+}
+.sumario{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height:50vh;
+    display: grid;
+    background-color: transparent;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-rows: auto auto auto;
+    gap:20px;
+    border-bottom: 1px solid white;
+}
+.column h3{
+    font-family: "Cinzel", serif;
+    color:var(--font-color1);
+    font-size:20px;
+    font-weight: 900;
+    top:-10%;
+    position: absolute;
+    font-weight: 300;
+    transition:.5s;
+}
+.column h4{
+    font-size: 18px;
+    color: var(--font-color5);
+    font-family: "Afacad Flux", sans-serif;
+    cursor: pointer;
+    transition: 1s;
+}
+.column h4:hover{
+    text-decoration: underline;
+    color: var(--font-color1);
+}
+.column a{
+    font-size: 15px;
+    color: var(--font-color3);
+    font-family: "Afacad Flux", sans-serif;
+}
+.column a:hover{
+    color: var(--font-color1);
+}
+.column img{
+    width: 40px;
+    transition: .5s;
+}
+.column img:hover{
+    width:55px;
+    filter:brightness(70%);
+}
+.column{
+    background-color:transparent;
+    display: flex;
+    width: 200px;
+    height:auto;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding:15px;
+    margin-left:25%;
+    transition:.5s;
+}
+.column1{
+    grid-column: 1;
+}
+.column2{
+    grid-column: 2;
+}
+.column2 a{
+    position: relative;
+    top:-25%;
+}
+.column3{
+    grid-column: 3;
+}
+footer .texts{
+    position: absolute;
+    width:100%;
+    height:140px;
+    background: var(--bg-color3);
+    bottom:12%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:50px;
+}
+.texts h1{
+    top: -100%;
+    color:var(--font-color1);
+    transition:.5s;
+    background: linear-gradient(180deg, white 50%, black 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.texts p{
+    font-family: "Afacad Flux", sans-serif;
+    font-size:12px;
+    text-align: center;
+    display: flex;
+    position:absolute;
+}
+.descricao{
+    position:absolute;
+    width:50%;
+    height:50%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    top:20%;
+    color:var(--font-color2);
+}
+.descricao .content{
+    top:0%;
+}
+.descricao .content2{
+    bottom:0%;
+}
+.texts #copyright{
+    bottom:10%;
+    color:var(--font-color2);
+}
+footer #logotipo{
+    position:absolute;
+    bottom:0%;
+    width:80px;
+}
